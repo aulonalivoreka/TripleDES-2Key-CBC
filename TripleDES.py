@@ -28,6 +28,22 @@ class TripleDESApp:
         position_y = (screen_h - 250) // 2
         self.root_window.geometry(f"800x250+{position_x}+{position_y}")
 
+        def add_widgets(self):
+
+            # Frame for Key 1 input
+            key1_frame = tk.Frame(self.root_window, background='#f7f7f7')
+            key1_frame.pack(pady=5)
+
+            self.add_label(key1_frame, "Enter Key 1 (Up to 8 chars):", side=tk.LEFT)
+            self.key1_input = self.add_entry(key1_frame, side=tk.LEFT)
+
+            # Frame for Key 2 input
+            key2_frame = tk.Frame(self.root_window, background='#f7f7f7')
+            key2_frame.pack(pady=5)
+
+            self.add_label(key2_frame, "Enter Key 2 (Up to 8 chars):", side=tk.LEFT)
+            self.key2_input = self.add_entry(key2_frame, side=tk.LEFT)
+
     
     def choose_file(self):
         self.selected_file = filedialog.askopenfilename(initialdir="/", title="Choose a File", filetypes=(("All files", "*.*"),))
