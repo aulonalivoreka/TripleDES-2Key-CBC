@@ -28,9 +28,9 @@ class TripleDESApp:
         position_y = (screen_h - 250) // 2
         self.root_window.geometry(f"800x250+{position_x}+{position_y}")
 
-
     
-    
+    def choose_file(self):
+        self.selected_file = filedialog.askopenfilename(initialdir="/", title="Choose a File", filetypes=(("All files", "*.*"),))
     
     def format_key(self, key_input):
     # Method to format the key to ensure it is 8 bytes
