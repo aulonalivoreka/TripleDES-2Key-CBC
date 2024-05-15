@@ -22,7 +22,7 @@ Triple DES employs three stages of DES encryption:
   - **Second Stage (D(k2, ...)):** Decrypt the output of the first stage using the second key (k2).
   - **Third Stage (E(k1, ...)):** Encrypt the output of the second stage using the first key (k1).
  
-  - **Decryption: D(k1, E(k2, D(k1, C))):**
+- **Decryption: D(k1, E(k2, D(k1, C))):**
   - **First Stage (D(k1, ...)):** Decrypt the ciphertext (C) using the first key (k1).
   - **Second Stage (E(k2, ...)):** Encrypt the output of the first stage using the second key (k2).
   - **Third Stage (D(k1, ...)):** Decrypt the output of the second stage using the first key (k1).
