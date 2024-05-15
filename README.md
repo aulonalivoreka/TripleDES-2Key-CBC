@@ -12,3 +12,12 @@ This project was completed by sophomore students from the Faculty of Electrical 
 ## Triple DES 2-Key CBC Mode Encryption and Decryption
 
 Triple DES (3DES) is a symmetric-key block cipher that applies the DES (Data Encryption Standard) algorithm three times to each data block, enhancing its security compared to single DES. By using two unique keys, Triple DES provides increased protection against brute-force attacks and cryptographic vulnerabilities.
+
+
+## Structure of the Triple DES 2-Key CBC Mode
+
+Triple DES employs three stages of DES encryption:
+- **Encryption: E(k1, D(k2, E(k1, P))):**
+  - **First Stage (E(k1, ...)):** Encrypt the plaintext (P) using the first key (k1).
+  - **Second Stage (D(k2, ...)):** Decrypt the output of the first stage using the second key (k2).
+  - **Third Stage (E(k1, ...)):** Encrypt the output of the second stage using the first key (k1).
