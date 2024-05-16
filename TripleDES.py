@@ -47,6 +47,10 @@ class TripleDESApp:
     
     def choose_file(self):
         self.selected_file = filedialog.askopenfilename(initialdir="/", title="Choose a File", filetypes=(("All files", "*.*"),))
+
+    if self.selected_file:
+            self.filepath_label.config(text=self.selected_file, font=("Georgia", 10, 'italic'))
+        
     
     def format_key(self, key_input):
     # Method to format the key to ensure it is 8 bytes
