@@ -44,6 +44,29 @@ class TripleDESApp:
             self.add_label(key2_frame, "Enter Key 2 (Up to 8 chars):", side=tk.LEFT)
             self.key2_input = self.add_entry(key2_frame, side=tk.LEFT)
 
+            # Frame for File Selection
+            file_frame = tk.Frame(self.root_window, background='#f7f7f7')
+            file_frame.pack(pady=5)
+
+            self.filepath_label = self.add_label(file_frame, "Choose a file:", side=tk.LEFT)
+            self.add_button(file_frame, "Select File", self.choose_file, bg='#0044cc', active_bg='#0033aa', side=tk.LEFT)
+
+            # Frame for Action Buttons
+            action_frame = tk.Frame(self.root_window, background='#f7f7f7')
+            action_frame.pack(pady=10)
+
+            self.add_label(action_frame, "Action:", side=tk.LEFT)
+            self.action_choice = tk.StringVar(value="encrypt")  # Default action is encrypt
+            self.add_radiobutton(action_frame, "Encrypt", "encrypt", side=tk.LEFT)
+            self.add_radiobutton(action_frame, "Decrypt", "decrypt", side=tk.LEFT)
+
+            # Frame for Execute Button
+            execute_frame = tk.Frame(self.root_window, background='#f7f7f7')
+            execute_frame.pack(pady=10)
+
+            self.add_button(execute_frame, "Execute", self.execute_process, bg='#28a745', active_bg='#218838', side=tk.LEFT)
+
+
     
     def choose_file(self):
         self.selected_file = filedialog.askopenfilename(initialdir="/", title="Choose a File", filetypes=(("All files", "*.*"),))
