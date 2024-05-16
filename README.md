@@ -30,3 +30,7 @@ Triple DES employs three stages of DES encryption:
 ### Encryption Process
 - **Key 1 and Key 2 Input:**
   - Users provide two keys (k1 and k2), each up to 8 characters long. These keys are critical for the encryption and decryption process, and their security directly impacts the overall encryption strength.
+
+### Decryption Process
+- **Extract IV and Ciphertext:**
+  - The IV and ciphertext are separated from the hex-encoded input. The IV is essential for initializing the CBC mode for decryption.
