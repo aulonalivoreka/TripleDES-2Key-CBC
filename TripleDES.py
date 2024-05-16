@@ -70,3 +70,12 @@ class TripleDESApp:
         key = pad(key, DES.block_size, style='pkcs7')
     return key
 
+    def perform_encryption(self, data, key1, key2):
+    iv = b'fixedIV12345678'[:DES.block_size]
+    encrypted_once = self.encrypt_des(data, key1, iv)
+    static_iv = b'staticIV1234567'[:DES.block_size]
+    decrypted_once = self.decrypt_des(encrypted_once, key2, static_iv)
+    final_encryption = self.encrypt_des(decrypted_once, key1, iv)
+   
+    return binascii.hexlify(final_encryption)
+
