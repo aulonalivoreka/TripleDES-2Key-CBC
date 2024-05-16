@@ -97,4 +97,16 @@ class TripleDESApp:
     except ValueError:
         messagebox.showerror("Error", "Decryption failed. Incorrect key combination.")
         return None
+        
+    def encrypt_des(self, data, key, iv):
+    modified_iv = iv[::-1]
+    cipher = DES.new(key, DES.MODE_CBC, iv=modified_iv)
+    encrypted_data = cipher.encrypt(data)
+    return encrypted_data
+
+    def decrypt_des(self, data, key, iv):
+    modified_iv = iv[::-1]
+    cipher = DES.new(key, DES.MODE_CBC, iv=modified_iv)
+    decrypted_data = cipher.decrypt(data)
+    return decrypted_data
 
