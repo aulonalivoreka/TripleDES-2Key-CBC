@@ -26,3 +26,7 @@ Triple DES employs three stages of DES encryption:
   - **First Stage (D(k1, ...)):** Decrypt the ciphertext (C) using the first key (k1).
   - **Second Stage (E(k2, ...)):** Encrypt the output of the first stage using the second key (k2).
   - **Third Stage (D(k1, ...)):** Decrypt the output of the second stage using the first key (k1).
+ 
+### Encryption Process
+- **Key 1 and Key 2 Input:**
+  - Users provide two keys (k1 and k2), each up to 8 characters long. These keys are critical for the encryption and decryption process, and their security directly impacts the overall encryption strength.
