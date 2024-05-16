@@ -110,3 +110,8 @@ class TripleDESApp:
     decrypted_data = cipher.decrypt(data)
     return decrypted_data
 
+    if __name__ == "__main__":
+    main_root = tk.Tk()
+    app = TripleDESApp(main_root)
+    main_root.mainloop()
+
