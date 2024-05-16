@@ -13,7 +13,6 @@ This project was completed by sophomore students from the Faculty of Electrical 
 
 Triple DES (3DES) is a symmetric-key block cipher that applies the DES (Data Encryption Standard) algorithm three times to each data block, enhancing its security compared to single DES. By using two unique keys, Triple DES provides increased protection against brute-force attacks and cryptographic vulnerabilities.
 
-
 ## Structure of the Triple DES 2-Key CBC Mode
 
 Triple DES employs three stages of DES encryption:
@@ -21,19 +20,15 @@ Triple DES employs three stages of DES encryption:
   - **First Stage (E(k1, ...)):** Encrypt the plaintext (P) using the first key (k1).
   - **Second Stage (D(k2, ...)):** Decrypt the output of the first stage using the second key (k2).
   - **Third Stage (E(k1, ...)):** Encrypt the output of the second stage using the first key (k1).
- 
+
 - **Decryption: D(k1, E(k2, D(k1, C))):**
   - **First Stage (D(k1, ...)):** Decrypt the ciphertext (C) using the first key (k1).
   - **Second Stage (E(k2, ...)):** Encrypt the output of the first stage using the second key (k2).
   - **Third Stage (D(k1, ...)):** Decrypt the output of the second stage using the first key (k1).
- 
+
 ### Encryption Process
 - **Key 1 and Key 2 Input:**
   - Users provide two keys (k1 and k2), each up to 8 characters long. These keys are critical for the encryption and decryption process, and their security directly impacts the overall encryption strength.
-
-### Decryption Process
-- **Extract IV and Ciphertext:**
-  - The IV and ciphertext are separated from the hex-encoded input. The IV is essential for initializing the CBC mode for decryption.
 
 - **Initial Vector (IV):**
   - A random Initial Vector (IV) is generated for the Cipher Block Chaining (CBC) mode. The IV ensures that identical plaintext blocks result in different ciphertext blocks, enhancing security by introducing randomness.
@@ -80,3 +75,4 @@ This Python script implements Triple DES encryption and decryption using the Tki
 ```bash
 python TripleDESApp.py
 ```
+
