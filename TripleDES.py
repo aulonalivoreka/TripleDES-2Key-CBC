@@ -79,3 +79,22 @@ class TripleDESApp:
    
     return binascii.hexlify(final_encryption)
 
+    def perform_decryption(self, data, key1, key2):
+    try:
+        iv = binascii.unhexlify(data[:DES.block_size * 2])
+        ciphertext = binascii.unhexlify(data[DES.block_size * 2:])
+    except binascii.Error:
+        messagebox.showerror("Error", "Invalid encrypted data format.")
+        return None
+
+    first_pass = self.decrypt_des(ciphertext, key1, iv)
+    static_iv = b'staticIV1234567'[:DES.block_size]  # Using a different IV for middle step
+    second_pass = self.encrypt_des(first_pass, key2, static_iv)
+    final_pass = self.decrypt_des(second_pass, key1, iv)
+
+    try:
+        return unpad(final_pass, DES.block_size)
+    except ValueError:
+        messagebox.showerror("Error", "Decryption failed. Incorrect key combination.")
+        return None
+
