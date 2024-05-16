@@ -50,6 +50,9 @@ class TripleDESApp:
 
     if self.selected_file:
             self.filepath_label.config(text=self.selected_file, font=("Georgia", 10, 'italic'))
+    else:
+            self.filepath_label.config(text="Choose a file:", font=("Georgia", 12))
+
         
     
     def format_key(self, key_input):
