@@ -53,6 +53,10 @@ class TripleDESApp:
     else:
             self.filepath_label.config(text="Choose a file:", font=("Georgia", 12))
 
+    def execute_process(self):
+        key1 = self.key1_input.get()
+        key2 = self.key2_input.get()
+
         
     
     def format_key(self, key_input):
