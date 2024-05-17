@@ -134,16 +134,14 @@ def perform_decryption(self, data, key1, key2):
             return None
         
     def encrypt_des(self, data, key, iv):
-    modified_iv = iv[::-1]
-    cipher = DES.new(key, DES.MODE_CBC, iv=modified_iv)
-    encrypted_data = cipher.encrypt(data)
-    return encrypted_data
+        # Method to perform DES encryption
+        cipher = DES.new(key, DES.MODE_CBC, iv=iv)
+        return cipher.encrypt(data)
 
     def decrypt_des(self, data, key, iv):
-    modified_iv = iv[::-1]
-    cipher = DES.new(key, DES.MODE_CBC, iv=modified_iv)
-    decrypted_data = cipher.decrypt(data)
-    return decrypted_data
+        # Method to perform DES decryption
+        cipher = DES.new(key, DES.MODE_CBC, iv=iv)
+        return cipher.decrypt(data)
 
     if __name__ == "__main__":
     main_root = tk.Tk()
