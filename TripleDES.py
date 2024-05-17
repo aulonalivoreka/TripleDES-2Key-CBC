@@ -66,7 +66,11 @@ class TripleDESApp:
 
             self.add_button(execute_frame, "Execute", self.execute_process, bg='#28a745', active_bg='#218838', side=tk.LEFT)
 
-
+def add_label(self, parent, text, side=tk.TOP):
+        # Method to add a label to a parent frame
+        label = tk.Label(parent, text=text, font=("Georgia", 12), background='#f7f7f7')
+        label.pack(side=side, padx=5, pady=5)
+        return label
     
     def choose_file(self):
         self.selected_file = filedialog.askopenfilename(initialdir="/", title="Choose a File", filetypes=(("All files", "*.*"),))
