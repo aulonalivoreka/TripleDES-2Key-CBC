@@ -71,6 +71,12 @@ def add_label(self, parent, text, side=tk.TOP):
         label = tk.Label(parent, text=text, font=("Georgia", 12), background='#f7f7f7')
         label.pack(side=side, padx=5, pady=5)
         return label
+
+def add_entry(self, parent, side=tk.TOP):
+        # Method to add an entry field to a parent frame
+        entry = tk.Entry(parent, show="*", font=("Georgia", 12), background='white', borderwidth=2, relief='groove')
+        entry.pack(side=side, padx=5, pady=5)
+        return entry
     
     def choose_file(self):
         self.selected_file = filedialog.askopenfilename(initialdir="/", title="Choose a File", filetypes=(("All files", "*.*"),))
