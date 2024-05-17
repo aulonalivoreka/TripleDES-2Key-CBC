@@ -122,16 +122,16 @@ def perform_decryption(self, data, key1, key2):
             messagebox.showerror("Error", "Invalid encrypted data format.")
             return None
 
-    first_pass = self.decrypt_des(ciphertext, key1, iv)
-    static_iv = b'staticIV1234567'[:DES.block_size]  # Using a different IV for middle step
-    second_pass = self.encrypt_des(first_pass, key2, static_iv)
-    final_pass = self.decrypt_des(second_pass, key1, iv)
+        # Perform Triple DES decryption: D-E-D
+        first_pass = self.decrypt_des(ciphertext, key1, iv)
+        second_pass = self.encrypt_des(first_pass, key2, iv)
+        final_pass = self.decrypt_des(second_pass, key1, iv)
 
-    try:
-        return unpad(final_pass, DES.block_size)
-    except ValueError:
-        messagebox.showerror("Error", "Decryption failed. Incorrect key combination.")
-        return None
+        try:
+            return unpad(final_pass, DES.block_size)  # Remove padding and return
+        except ValueError:
+            messagebox.showerror("Error", "Decryption failed. Incorrect key combination.")
+            return None
         
     def encrypt_des(self, data, key, iv):
     modified_iv = iv[::-1]
