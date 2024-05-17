@@ -75,4 +75,10 @@ This Python script implements Triple DES encryption and decryption using the Tki
 ```bash
 python TripleDESApp.py
 ```
+### How It Works
+- **Input Keys**: Enter two keys (each up to 8 characters).
+- **File Selection**: Choose the file to be encrypted or decrypted.
+- **Encryption**: Encrypt the file using Triple DES with the provided keys.
+- **Decryption**: Decrypt the file using the same keys.
+
 
