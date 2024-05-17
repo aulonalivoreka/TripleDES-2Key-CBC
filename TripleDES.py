@@ -87,6 +87,9 @@ class TripleDESApp:
      if not key2:
             messagebox.showerror("Error", "Key 2 must be provided and be no more than 8 characters.")
             return
+         
+        formatted_key1 = self.format_key(key1)
+        formatted_key2 = self.format_key(key2)
 
     def format_key(self, key_input):
     # Method to format the key to ensure it is 8 bytes
