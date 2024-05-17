@@ -113,13 +113,14 @@ class TripleDESApp:
 
         return binascii.hexlify(iv + final_pass)  # Return hex-encoded result
 
-    def perform_decryption(self, data, key1, key2):
-    try:
-        iv = binascii.unhexlify(data[:DES.block_size * 2])
-        ciphertext = binascii.unhexlify(data[DES.block_size * 2:])
-    except binascii.Error:
-        messagebox.showerror("Error", "Invalid encrypted data format.")
-        return None
+def perform_decryption(self, data, key1, key2):
+        try:
+            # Extract IV and ciphertext from data
+            iv = binascii.unhexlify(data[:DES.block_size * 2])
+            ciphertext = binascii.unhexlify(data[DES.block_size * 2:])
+        except binascii.Error:
+            messagebox.showerror("Error", "Invalid encrypted data format.")
+            return None
 
     first_pass = self.decrypt_des(ciphertext, key1, iv)
     static_iv = b'staticIV1234567'[:DES.block_size]  # Using a different IV for middle step
