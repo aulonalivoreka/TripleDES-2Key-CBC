@@ -91,18 +91,17 @@ class TripleDESApp:
         formatted_key1 = self.format_key(key1)
         formatted_key2 = self.format_key(key2)
 
+    # Format key, Encryption and Decryption Logic
     def format_key(self, key_input):
-    # Method to format the key to ensure it is 8 bytes
-    key = key_input.encode('utf-8')
-    # Check if key length is greater than 8 bytes and truncate if necessary
-    if len(key) > 8:
-        messagebox.showinfo("Info", "Key is too long. It will be truncated to 8 characters.")
-        key = key[:8]  # Truncate to 8 bytes
-    # If key length is less than 8 bytes, pad it to reach 8 bytes
-    elif len(key) < 8:
-        messagebox.showinfo("Info", "Key is too short. It will be padded to 8 characters.")
-        key = pad(key, DES.block_size, style='pkcs7')
-    return key
+        # Method to format the key to ensure it is 8 bytes
+        key = key_input.encode('utf-8')
+        if len(key) > 8:
+            messagebox.showerror("Error", "Key is too long.")
+            return None
+        if len(key) < 8:
+            key = pad(key, DES.block_size, style='pkcs7')
+        return key
+
 
     def perform_encryption(self, data, key1, key2):
     iv = b'fixedIV12345678'[:DES.block_size]
