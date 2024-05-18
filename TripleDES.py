@@ -93,22 +93,26 @@ def add_radiobutton(self, parent, text, value, side=tk.TOP):
         radio.pack(side=side, padx=5, pady=5)
         return radio
     
-    def choose_file(self):
+# File Selection and Execution Handling
+def choose_file(self):
+        # Method to open file dialog and select file
         self.selected_file = filedialog.askopenfilename(initialdir="/", title="Choose a File", filetypes=(("All files", "*.*"),))
 
     if self.selected_file:
             self.filepath_label.config(text=self.selected_file, font=("Georgia", 10, 'italic'))
     else:
-            self.filepath_label.config(text="Choose a file:", font=("Georgia", 12))
+        self.filepath_label.config(text="Choose a file:", font=("Georgia", 12))
 
     def execute_process(self):
         key1 = self.key1_input.get()
         key2 = self.key2_input.get()
 
+     # Validate Key 1
      if not key1:
             messagebox.showerror("Error", "Key 1 must be provided and be no more than 8 characters.")
             return
-
+         
+     # Validate Key 2
      if not key2:
             messagebox.showerror("Error", "Key 2 must be provided and be no more than 8 characters.")
             return
@@ -116,11 +120,13 @@ def add_radiobutton(self, parent, text, value, side=tk.TOP):
         formatted_key1 = self.format_key(key1)
         formatted_key2 = self.format_key(key2)
 
+     # Ensure a file has been selected
      if not self.selected_file:
             messagebox.showerror("Error", "Please choose a file.")
             return
 
         try:
+            # Read file data
             with open(self.selected_file, "rb") as file:
                 file_data = file.read()
 
@@ -140,6 +146,7 @@ def add_radiobutton(self, parent, text, value, side=tk.TOP):
             output_extension = os.path.splitext(self.selected_file)[1]
             output_filename = os.path.splitext(self.selected_file)[0] + "_decrypted" + output_extension
 
+            # Write output data to file
             with open(output_filename, "wb") as file:
             file.write(output_data)
 
