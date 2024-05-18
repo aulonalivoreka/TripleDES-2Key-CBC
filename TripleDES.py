@@ -85,6 +85,13 @@ def add_button(self, parent, text, command, bg, active_bg, side=tk.TOP):
                            borderwidth=0, relief='solid', command=command)
         button.pack(side=side, padx=5, pady=5)
         return button
+
+def add_radiobutton(self, parent, text, value, side=tk.TOP):
+        # Method to add a radio button to a parent frame
+        radio = tk.Radiobutton(parent, text=text, variable=self.action_choice, value=value,
+                               font=("Georgia", 12), background='#f7f7f7', activebackground='#f7f7f7')
+        radio.pack(side=side, padx=5, pady=5)
+        return radio
     
     def choose_file(self):
         self.selected_file = filedialog.askopenfilename(initialdir="/", title="Choose a File", filetypes=(("All files", "*.*"),))
