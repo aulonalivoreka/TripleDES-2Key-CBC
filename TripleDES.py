@@ -116,6 +116,14 @@ def add_radiobutton(self, parent, text, value, side=tk.TOP):
         formatted_key1 = self.format_key(key1)
         formatted_key2 = self.format_key(key2)
 
+     if not self.selected_file:
+            messagebox.showerror("Error", "Please choose a file.")
+            return
+
+        try:
+            with open(self.selected_file, "rb") as file:
+                file_data = file.read()
+
     # Format key, Encryption and Decryption Logic
     def format_key(self, key_input):
         # Method to format the key to ensure it is 8 bytes
