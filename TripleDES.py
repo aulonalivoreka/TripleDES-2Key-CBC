@@ -124,6 +124,10 @@ def add_radiobutton(self, parent, text, value, side=tk.TOP):
             with open(self.selected_file, "rb") as file:
                 file_data = file.read()
 
+    except FileNotFoundError:
+            messagebox.showerror("Error", "File not found.")
+            return
+
     # Format key, Encryption and Decryption Logic
     def format_key(self, key_input):
         # Method to format the key to ensure it is 8 bytes
