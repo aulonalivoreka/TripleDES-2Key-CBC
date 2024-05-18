@@ -137,6 +137,10 @@ def add_radiobutton(self, parent, text, value, side=tk.TOP):
         if not output_data:
             return
 
+            output_extension = os.path.splitext(self.selected_file)[1]
+            output_filename = os.path.splitext(self.selected_file)[0] + "_decrypted" + output_extension
+
+
     # Format key, Encryption and Decryption Logic
     def format_key(self, key_input):
         # Method to format the key to ensure it is 8 bytes
