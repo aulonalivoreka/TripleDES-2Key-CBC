@@ -140,6 +140,11 @@ def add_radiobutton(self, parent, text, value, side=tk.TOP):
             output_extension = os.path.splitext(self.selected_file)[1]
             output_filename = os.path.splitext(self.selected_file)[0] + "_decrypted" + output_extension
 
+            with open(output_filename, "wb") as file:
+            file.write(output_data)
+
+        messagebox.showinfo("Complete", f"Operation complete. Output file: {output_filename}")
+
 
     # Format key, Encryption and Decryption Logic
     def format_key(self, key_input):
