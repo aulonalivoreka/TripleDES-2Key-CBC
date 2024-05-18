@@ -81,4 +81,27 @@ python TripleDESApp.py
 - **Encryption**: Encrypt the file using Triple DES with the provided keys.
 - **Decryption**: Decrypt the file using the same keys.
 
+  #### Functions
+- **`initialize_gui`**: Sets up the main GUI.
+- **`center_window_on_screen`**: Centers the application window on the screen.
+- **`add_widgets`**: Adds input fields, buttons, and labels to the GUI.
+- **`choose_file`**: Opens a file dialog for file selection.
+- **`execute_process`**: Manages encryption or decryption based on user input.
+- **`format_key`**: Ensures keys are 8 bytes in length.
+- **`perform_encryption`**: Encrypts the file data using Triple DES.
+- **`perform_decryption`**: Decrypts the file data using Triple DES.
+- **`encrypt_des`**: Performs single DES encryption.
+- **`decrypt_des`**: Performs single DES decryption.
+
+### Example Usage
+
+**Input:**
+- Enter Key 1 (up to 8 chars): `12345678`
+- Enter Key 2 (up to 8 chars): `abcdefgh`
+- Select the file to encrypt or decrypt.
+
+**Output:**  
+- **Encrypted File:** `file_encrypted.ext`
+- **Decrypted File:** `file_decrypted.ext`
+
 
