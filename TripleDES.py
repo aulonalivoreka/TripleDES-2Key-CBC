@@ -127,6 +127,15 @@ def add_radiobutton(self, parent, text, value, side=tk.TOP):
     except FileNotFoundError:
             messagebox.showerror("Error", "File not found.")
             return
+        
+     action = self.action_choice.get()  # Get selected action
+     if action == "encrypt":
+            output_data = self.perform_encryption(file_data, formatted_key1, formatted_key2)
+            output_filename = os.path.splitext(self.selected_file)[0] + "_encrypted" + os.path.splitext(self.selected_file)[1]
+    else:
+        output_data = self.perform_decryption(file_data, formatted_key1, formatted_key2)
+        if not output_data:
+            return
 
     # Format key, Encryption and Decryption Logic
     def format_key(self, key_input):
