@@ -104,4 +104,17 @@ python TripleDESApp.py
 - **Encrypted File:** `file_encrypted.ext`
 - **Decrypted File:** `file_decrypted.ext`
 
+### Notes
+- **Security**: Triple DES with 2 keys significantly improves security over single DES.
+- **User-Friendly Interface**: The GUI simplifies file encryption and decryption tasks.
+- **Flexibility**: Users can select their own keys and files, allowing for customized encryption.
+- **Error Handling**: The application handles various user errors gracefully, ensuring a smooth user experience.
+
+### Expected Outcomes
+- **Enhanced Security**: Triple DES 2-key mode offers robust security for sensitive data.
+- **Usability**: The application is designed to be intuitive and easy to use.
+- **Reliability**: Accurate encryption and decryption processes ensure data integrity.
+- **Error Resilience**: Built-in error handling ensures reliable operation even with incorrect inputs.
+
+
 
