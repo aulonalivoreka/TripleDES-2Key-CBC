@@ -138,7 +138,7 @@ These metrics help users understand the resource requirements and performance im
 
 ### Recommendations
 
-Based on the security audit, we recommend the following best practices for deploying the Triple DES encryption tool:
+We recommend the following best practices for deploying the Triple DES encryption tool:
 
 - Regularly update the encryption libraries to their latest versions to patch known vulnerabilities.
 - Avoid using predictable keys and ensure that all keys are securely stored and managed.
