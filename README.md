@@ -104,8 +104,13 @@ python TripleDESApp.py
 - **Encrypted File:** `file_encrypted.ext`
 - **Decrypted File:** `file_decrypted.ext`
 
+GUI: 
 ![image](https://github.com/aulonalivoreka/TripleDES-2Key-CBC/assets/116767903/3e5b996e-550e-4e47-947e-4a5bed0bbc19)
+
+Output file for encryption:
 ![image](https://github.com/aulonalivoreka/TripleDES-2Key-CBC/assets/116767903/a4a93f70-21c4-4ed2-bdc4-c39357ad29ab)
+
+Output file for decryption:
 ![image](https://github.com/aulonalivoreka/TripleDES-2Key-CBC/assets/116767903/e3232acd-e579-4416-ab97-1f010d59502c)
 
 ### Notes
