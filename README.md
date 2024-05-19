@@ -81,7 +81,7 @@ python TripleDESApp.py
 - **Encryption**: Encrypt the file using Triple DES with the provided keys.
 - **Decryption**: Decrypt the file using the same keys.
 
-  #### Functions
+### Functions
 - **`initialize_gui`**: Sets up the main GUI.
 - **`center_window_on_screen`**: Centers the application window on the screen.
 - **`add_widgets`**: Adds input fields, buttons, and labels to the GUI.
